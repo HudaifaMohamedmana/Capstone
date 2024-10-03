@@ -43,7 +43,8 @@ const updateUser = async (req, res) => {
         const user = await User.findByIdAndUpdate(id, { 
             name,
             email,
-            password 
+            password,
+            isAdmin: false 
         });
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
