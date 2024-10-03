@@ -4,22 +4,20 @@ const PORT = process.env.port || 3000
 const app = express()
 const cors = require('cors');
 const connectToDb = require('./db/connectToDb')
-const MenuC = require('./controllers/menuC')
+const ordersR = require('./router/OrdersR')
+const userR = require('./router/UserR')
+const menuR = require('./router/MenuR')
+
 connectToDb()
 
 app.use(express.json())
 app.use(cors())
 //-----------------------------------------------------------------------------------------------
+app.use('/user', userR)
+app.use('/menu', menuR)
+app.use('/orders', ordersR)
 
-app.get(`/Menu`,MenuC.fetchMenu)
 
-app.post(`/Menu`,MenuC.createMenu)
-
-app.get(`/Menu/:id`,MenuC.fetchMenuById)
-
-app.put(`/Menu/:id`,MenuC.updateMenu)
-
-app.delete(`/Menu/:id`,MenuC.deleteMenu)
 
 
 

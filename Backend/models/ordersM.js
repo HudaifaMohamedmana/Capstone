@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
 const ordersSchema = new mongoose.Schema({
-   itme: [{
+   item: [{
       imge: {
          type: String,
          required: true,
       },
-      names: {
+      name: {
          type: String,
          required: true,
       },
