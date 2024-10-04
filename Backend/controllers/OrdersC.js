@@ -3,14 +3,15 @@ const Orders = require('../models/ordersM');
 // ----------------------------------------------- make new order
 const createOrder = async (req, res) => {
     try {
-        const { item, total } = req.body;
+        const { email, item, total } = req.body;
 
         if (!item || item.length === 0) {
             return res.status(400).json({ message: 'Items are required' });
         }
         const newOrder = new Orders({
-            item,
-            total
+            email: email,
+            item: item,
+            total: total
         });
         res.status(201).json({ message: 'Order created successfully', newOrder });
     } catch (error) {
@@ -47,8 +48,8 @@ const getOrderById = async (req, res) => {
 const updateOrder = async (req, res) => {
     try {
         const id = req.params.id;
-        const { item, total } = req.body;
-        const updatedOrder = await Orders.findByIdAndUpdate(id,{ item: item, total: total});
+        const { email, item, total } = req.body;
+        const updatedOrder = await Orders.findByIdAndUpdate(id,{ email:email, item: item, total: total});
 
         if (!updatedOrder) {
             return res.status(404).json({ message: 'Order not found' });

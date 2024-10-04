@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const ordersSchema = new mongoose.Schema({
+   email: {
+      type: String,
+      required: true,
+   },
    item: [{
       imge: {
          type: String,
@@ -19,7 +23,11 @@ const ordersSchema = new mongoose.Schema({
          required: true,
       }
    }],
-   total: Number
+   total: {
+      type: String,
+      required: true,
+   },
+   
 })
 
 const Orders = mongoose.model('Orders',ordersSchema);
