@@ -50,7 +50,7 @@ form input{
   width: 90%;
 
 }
-.submit{
+.submit {
  width: 100%;
  background-color: white;
  color: black;
@@ -59,3 +59,8 @@ form input{
  margin-bottom: 1em;
  border-radius: 8px;
 }
+/* button{
+  border: none;
+  padding: 0px;
+  margin: 0%;
+} */

@@ -8,12 +8,18 @@ import { Route, Routes } from 'react-router-dom'
 export const AppContext = createContext();
 
 //---------------------- import components
-import Carousel from './components/Carousel.jsx'
-// import Menu from './components/Menu.jsx'
 import Nav from './components/nav.jsx'
+import Home from './components/Home.jsx'
+import Profile from './components/Profile.jsx'
 
 function App() {
-  const [user,setUser]=useState()
+  const [user,setUser]=useState({
+    id:'',
+    name:'',
+    email:'',
+    Password:'',
+    address:'',
+  })
   const [orders,setOrders] = useState()
   const [menu,setMenu] = useState()
 
@@ -24,11 +30,11 @@ function App() {
       <AppContext.Provider value={{ user, setUser, orders, setOrders, menu, setMenu }}>
 
         <Nav />
-        <Carousel />
         {/* <Menu /> */}
         <Routes>
-
-        <Route path='/form' element={<Form />} />
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/form' element={<Form />} />
         </Routes>
     </AppContext.Provider>
     </div>

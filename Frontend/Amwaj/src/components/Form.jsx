@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 
 import { AppContext } from '../App';
 
@@ -10,7 +11,9 @@ export const Form = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [address, setAddress] = useState('');
-//   useContext({setUser, user})
+
+  const navigate = useNavigate(); // Initialize navigate
+
 
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
@@ -30,6 +33,7 @@ export const Form = () => {
         alert('Sign Up successful!');
         setUser(response.data.newUser);
         console.log(response.data.newUser)
+        navigate('/');
       } else {
         const response = await axios.post(`http://localhost:3050/user/login`, {
             email: email, 
@@ -38,6 +42,7 @@ export const Form = () => {
         // alert('Sign In successful!');
         setUser(response.data.user);
         console.log(response.data.user)
+        navigate('/');
       }
     } catch (error) {
       alert('Error: ' + error.response.data.message);
@@ -90,7 +95,6 @@ export const Form = () => {
 
         <input className='submit' type="submit" value={isSignUp ? 'Sign Up' : 'Sign In'} />
       </form>
-
       <button onClick={toggleForm}>
         {isSignUp ? 'Sign In' : 'Sign Up'}
       </button>
