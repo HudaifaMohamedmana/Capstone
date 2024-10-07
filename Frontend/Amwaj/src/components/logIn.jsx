@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Route, Routes } from 'react-router-dom'
-import Form from './Form';
 
 
 function LogIn() {

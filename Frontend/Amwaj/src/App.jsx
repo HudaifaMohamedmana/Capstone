@@ -5,7 +5,7 @@ import Form  from './components/Form.jsx'
 import { Route, Routes } from 'react-router-dom'
 
 
-const Port = 'http://localhost:3050'
+export const AppContext = createContext();
 
 //---------------------- import components
 import Carousel from './components/Carousel.jsx'
@@ -17,39 +17,20 @@ function App() {
   const [orders,setOrders] = useState()
   const [menu,setMenu] = useState()
 
-  const createUser = async (e) => {
-    try {
-      e.preventDefault();
-      const res = await axios.post(`${Port}/user`, user);
-      // 1a.) Add 2nd arg to pass data , {}
-      console.log("CreatedNote : ", res);
-
-      // 2. Update State
-      setNotes(() => [res.data.note, ...notes]);
-      // adds note to notes array in state.
-      // ------------------------------------------
-      // Clear Form state
-      setUser(() => ({
-        title: "",
-        body: "",
-      }));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  createContext(user , setUser , orders , setOrders, menu, setMenu)
 
   return (
     <div className='mane'>
+      <AppContext.Provider value={{ user, setUser, orders, setOrders, menu, setMenu }}>
 
-      <Nav />
-      <Carousel />
-      {/* <Menu /> */}
-      <Routes>
-         
-      <Route path='/form' element={<Form />} />
-      </Routes>
+        <Nav />
+        <Carousel />
+        {/* <Menu /> */}
+        <Routes>
 
+        <Route path='/form' element={<Form />} />
+        </Routes>
+    </AppContext.Provider>
     </div>
   )
 }

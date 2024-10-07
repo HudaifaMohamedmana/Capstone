@@ -1,39 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
+import { AppContext } from '../App';
+
 export const Form = () => {
-  const [isSignUp, setIsSignUp] = useState(false); // Toggle between Sign Up and Sign In
-  const [name, setName] = useState(''); // Only used for Sign Up
+  const { setUser} = useContext(AppContext); 
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [address, setAddress] = useState(''); // Only used for Sign Up
+  const [address, setAddress] = useState('');
+//   useContext({setUser, user})
 
-  // Toggle the form type
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       if (isSignUp) {
-        // Sign Up Logic
-        const response = await axios.post('http://localhost:5000/api/users', {
+        const response = await axios.post('http://localhost:3050/user', {
           name,
           email,
           password,
           address,
         });
         alert('Sign Up successful!');
+        setUser(response.data.newUser);
+        console.log(response.data.newUser)
       } else {
-        // Sign In Logic
-        const response = await axios.post('http://localhost:5000/api/login', {
-          email,
-          password,
+        const response = await axios.post(`http://localhost:3050/user/login`, {
+            email: email, 
+            password: password 
         });
-        alert('Sign In successful!');
+        // alert('Sign In successful!');
+        setUser(response.data.user);
+        console.log(response.data.user)
       }
     } catch (error) {
       alert('Error: ' + error.response.data.message);
