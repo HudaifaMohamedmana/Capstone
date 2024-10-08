@@ -19,7 +19,7 @@ function App() {
     address: "",
   });
   const [orders, setOrders] = useState();
-  const [menu, setMenu] = useState();
+  const [menu, setMenu] = useState([]);
 
   createContext(user, setUser, orders, setOrders, menu, setMenu);
 

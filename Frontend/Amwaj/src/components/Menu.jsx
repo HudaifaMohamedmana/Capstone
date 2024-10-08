@@ -1,7 +1,75 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import axios from "axios";
+import ItemFram from "./ItemFram";
+
+import { AppContext } from "../App";
 
 function Menu() {
-  return <div>Menu</div>;
+  const { user, menu, setMenu } = useContext(AppContext);
+
+  const [type, setType] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState(0);
+  const [description, setDescription] = useState("");
+  const [inStock, setInStock] = useState(true);
+  //-------------------------------------------------
+
+  const futchMenu = async () => {
+    try {
+      const menu = await axios.get(`http://localhost:3050/menu`);
+      console.log(menu.data.menu);
+      setMenu(menu.data.menu);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    futchMenu();
+  }, []);
+
+  return (
+    <div>
+      <h1>Hot Drinks</h1>
+
+      <div className="hotDrink">
+        {menu.length > 0 ? (
+          menu.map((item) =>
+            item.type === "hotDrink" ? (
+              <ItemFram key={item._id} item={item} />
+            ) : null
+          )
+        ) : (
+          <p>No menu items available.</p>
+        )}
+      </div>
+      <h1>Cold Drinks</h1>
+
+      <div className="coldDrink">
+        {menu.length > 0 ? (
+          menu.map((item) =>
+            item.type === "coldDrink" ? (
+              <ItemFram key={item._id} item={item} />
+            ) : null
+          )
+        ) : (
+          <p>No menu items available.</p>
+        )}
+      </div>
+
+      <h1>Sweet</h1>
+      <div className="sweet">
+        {menu.length > 0 ? (
+          menu.map((item) =>
+            item.type === "sweet" ? (
+              <ItemFram key={item._id} item={item} />
+            ) : null
+          )
+        ) : (
+          <p>No menu items available.</p>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default Menu;

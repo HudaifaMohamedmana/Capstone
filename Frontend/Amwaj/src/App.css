@@ -1,7 +1,11 @@
 #root {
+  --clr-dark: rgba(70, 30, 0, 0.9);
+  --clr-light: rgba(255, 200, 150, 0.9) ;
   border: solid;
   /* margin-left: 1em; */
   margin-top: 0%;
+
+
 }
 body {
   min-height: 0%;
@@ -16,6 +20,9 @@ body {
   margin: 1em;
   width: 95vw;
   height: 10vh;
+  border-radius: 10px;
+  color: var(--clr-dark);
+  background-color:var(--clr-light);
 }
 .nav img {
   height: 100%;
@@ -38,35 +45,30 @@ body {
 }
 .cart img {
   cursor: pointer;
-  margin-right: 1em;
 }
 .cart img:hover {
   height: 10.5vh;
 }
 .form {
   border: solid;
-  background-color:rgba(70, 30, 0, 0.9);
-  color: white;
+  background-color:var(--clr-dark);
+  color:var(--clr-light);
   text-align: center;
   margin-right: 40vw;
   margin-left: 40vw;
   padding: 1em;
 }
-
-form {
-  /* text-align: end; */
-  /* margin-right: 1vw;  */
-  /* padding: 1em; */
-}
 form input {
-  border: solid;
+  border: solid var(--clr-dark);
   width: 90%;
   height: 100%;
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
 }
 .submit {
   width: 100%;
-  background-color: white;
-  color: black;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
   font-size: 22px;
   margin-top: 1em;
   border-radius: 8px;
@@ -76,13 +78,13 @@ button {
   border: solid;
   padding: 0px;
   margin: 0%;
-  width: 100%;
-  background-color: white;
-  color: black;
+  width: 95%;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
   font-size: 22px;
   margin-top: 1em;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 15px;
+    cursor: pointer;
 }
 .password {
   display: flex;
@@ -118,4 +120,50 @@ button {
 
 .ADImages:not(.displaySlide) {
   opacity: 0;
+}
+h2 h3 h1{
+  margin-left: 1vh;
+  color: var(--clr-dark);
+  margin-top: 0%;
+}
+a{
+  color: var(--clr-dark);
+}
+.hotDrink, .coldDrink, .sweet{
+  display: flex;
+  /* width: 20vw; */
+  flex-wrap: wrap;
+}
+.item{
+  border: solid;
+  width: 200px;
+  height: 320px;
+  margin: 1vh;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  text-align: center;
+}
+.item img{
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+.item button{
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 0%;
+}
+.dec{
+  height: 30%;
 }

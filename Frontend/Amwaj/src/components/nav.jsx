@@ -9,7 +9,7 @@ function Nav() {
       <Link to="/">
         <div className="logo">
           <img
-            src="https://www.shutterstock.com/image-vector/coffee-cup-logo-design-template-600nw-2180323303.jpg"
+            src="https://static.vecteezy.com/system/resources/thumbnails/023/628/609/small_2x/coffee-shop-logo-design-png.png"
             alt=""
           />
           <h2>Amwaj Cafe</h2>

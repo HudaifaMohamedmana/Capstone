@@ -10,12 +10,10 @@ function LogIn() {
   return (
     <div className="cart">
       <Link to={redirectPath}>
-        <div className="cart">
           <img
-            src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+            src="https://images.freeimages.com/fic/images/icons/740/made_of_wood/512/user_matte.png"
             alt="User Icon"
           />
-        </div>
       </Link>
     </div>
   );
