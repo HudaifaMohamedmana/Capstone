@@ -116,21 +116,24 @@ function Profile() {
 
             <br />
 
-            <input className="submit" type="submit" value="edited" />
+            <input className="submit" type="submit" value="save" />
           </form>
+          <button onClick={toggleEdit}>cancel</button>
         </div>
       )}
       {isEdit && (
-        <>
+        <div className="user">
+        <div className="userInfo">
           <p>Name: {user.name}</p>
-          <hr />
           <p>Email: {user.email}</p>
-          <hr />
           <p>Address: {user.address}</p>
+          </div>
+          <div className="userButton">
           <button onClick={toggleEdit}>Edit</button>
           <button onClick={logOut}>log out</button>
           <button onClick={deleteUser}>Delete my account</button>
-        </>
+          </div>
+        </div>
       )}
     </div>
   );
