@@ -11,8 +11,10 @@ export const Form = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [address, setAddress] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
-  const navigate = useNavigate(); // Initialize navigate
+
+  const navigate = useNavigate(); 
 
 
   const toggleForm = () => {
@@ -31,15 +33,14 @@ export const Form = () => {
           address,
         });
         alert('Sign Up successful!');
-        setUser(response.data.newUser);
-        console.log(response.data.newUser)
+        setUser(response.data.user);
+        console.log(response.data.user)
         navigate('/');
       } else {
         const response = await axios.post(`http://localhost:3050/user/login`, {
             email: email, 
             password: password 
         });
-        // alert('Sign In successful!');
         setUser(response.data.user);
         console.log(response.data.user)
         navigate('/');
@@ -60,7 +61,7 @@ export const Form = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required={isSignUp}  // Name is required for Sign Up
+              required={isSignUp}  
             />
             <br />
 
@@ -84,13 +85,21 @@ export const Form = () => {
         <br />
 
         <label>Password: </label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          minLength="8"
-        />
+        <div className="password">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength="8"
+              />
+              <input
+              className="checkbox"
+                type="checkbox"
+                checked={showPassword}
+                onChange={() => setShowPassword(!showPassword)}
+              />
+            </div>
         <br />
 
         <input className='submit' type="submit" value={isSignUp ? 'Sign Up' : 'Sign In'} />
