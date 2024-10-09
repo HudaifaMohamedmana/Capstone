@@ -291,3 +291,46 @@ button:hover {
   color: var(--clr-light);
   /* border-radius: 5px; */
 }
+/* -----------------------------------------admin ---------------------------------------------------*/
+.orders{
+display: flex;
+flex-wrap: wrap;
+}
+.orderFram{
+  border: solid;
+  width: 20vw;
+  margin: 1em;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.orderFram button{
+  margin: 6px;
+  align-items: center;
+  justify-content: center;
+}
+.orderDiv{
+  padding-left: 1vw;
+  margin: 5px;
+}
+.orderOver{
+  border: solid;
+  overflow: auto;
+  height: 60vh;
+  padding: 1em;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  margin-left: 0;
+}
+.orderOver div{
+  
+  display: flex;
+  justify-content: space-between;
+}
+.orderOver::-webkit-scrollbar {
+  width: 0;
+}
+
+

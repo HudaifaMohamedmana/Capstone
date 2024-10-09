@@ -46,6 +46,8 @@ function Cart() {
     });
     setOrderItem([])
     const response = await axios.post('http://localhost:3050/orders', {
+      name: user.name,
+      address:user.address,
       email: formData.email,
       item: orders.item,
       total: total,

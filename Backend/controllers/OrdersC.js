@@ -2,7 +2,7 @@ const Orders = require("../models/ordersM");
 
 // ----------------------------------------------- make new order
 const createOrder = async (req, res) => {
-  const { email, item, total } = req.body;
+  const { email, item, total,name,address } = req.body;
 
   try {
     if (!item || item.length === 0) {
@@ -12,6 +12,8 @@ const createOrder = async (req, res) => {
       email: email,
       item: item,
       total: total,
+      name:name,
+      address:address
     });
     res.status(201).json({ message: "Order created successfully", newOrder });
   } catch (error) {

@@ -14,17 +14,17 @@ function Menu() {
   const [inStock, setInStock] = useState(true);
   //-------------------------------------------------
 
-  const futchMenu = async () => {
+  const fetchMenu = async () => {
     try {
       const menu = await axios.get(`http://localhost:3050/menu`);
-      // console.log(menu.data.menu);
+      console.log(menu.data.menu);
       setMenu(menu.data.menu);
     } catch (error) {
       console.error(error);
     }
   };
   useEffect(() => {
-    futchMenu();
+    fetchMenu();
     console.log(orderItem);
   }, []);
 
