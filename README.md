@@ -8,7 +8,6 @@ Installation
 Usage
 Project Structure
 Contributing
-License
 Features
 User registration and login
 Browse products and add them to the cart
@@ -66,5 +65,3 @@ Contributions are welcome! If you'd like to contribute:
 Fork the repository.
 Create a new feature or bugfix branch.
 Submit a pull request with a clear description of your changes.
-License
-This project is licensed under the MIT License.
