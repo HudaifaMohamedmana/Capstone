@@ -25,7 +25,7 @@ function Orders() {
   }, []);
 
   useEffect(() => {
-    if (isAdmin) {
+    if (!isAdmin) {
       navigate("/");
       console.log(orders);
     }

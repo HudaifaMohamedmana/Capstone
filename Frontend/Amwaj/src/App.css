@@ -318,7 +318,7 @@ flex-wrap: wrap;
 .orderOver{
   border: solid;
   overflow: auto;
-  height: 60vh;
+  height: 45vh;
   padding: 1em;
   background-color: var(--clr-light);
   color: var(--clr-dark);

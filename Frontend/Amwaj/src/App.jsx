@@ -48,11 +48,11 @@ function App() {
     setTotal(newTotal);
   }, [orderItem, setTotal]);
   useEffect(() => {
-    if (!user.isAdmin) {
+    if (user.isAdmin) {
       setIsAdmin(true);
-      
-    } else {
+    }else{
       setIsAdmin(false);
+
     }
     console.log(isAdmin)
   }, [isAdmin,user]);
