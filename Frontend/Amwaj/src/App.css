@@ -133,6 +133,7 @@ a {
   display: flex;
   /* width: 20vw; */
   flex-wrap: wrap;
+  justify-content: center;
 }
 .item {
   border: solid;

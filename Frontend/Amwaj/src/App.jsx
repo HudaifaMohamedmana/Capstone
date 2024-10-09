@@ -18,15 +18,39 @@ function App() {
     password: "",
     address: "",
   });
-  const [orders, setOrders] = useState();
+  const [orderItem, setOrderItem] = useState([]);
+
+  const [orders, setOrders] = useState({
+    user: user.email,
+    item: orderItem,
+    total: 0,
+  });
   const [menu, setMenu] = useState([]);
 
-  createContext(user, setUser, orders, setOrders, menu, setMenu);
+  createContext(
+    user,
+    setUser,
+    orders,
+    setOrders,
+    menu,
+    setMenu,
+    orderItem,
+    setOrderItem
+  );
 
   return (
     <div className="mane">
       <AppContext.Provider
-        value={{ user, setUser, orders, setOrders, menu, setMenu }}
+        value={{
+          user,
+          setUser,
+          orders,
+          setOrders,
+          menu,
+          setMenu,
+          orderItem,
+          setOrderItem,
+        }}
       >
         <Nav />
         {/* <Menu /> */}

@@ -5,7 +5,7 @@ import ItemFram from "./ItemFram";
 import { AppContext } from "../App";
 
 function Menu() {
-  const { user, menu, setMenu } = useContext(AppContext);
+  const { user, menu, setMenu,orderItem } = useContext(AppContext);
 
   const [type, setType] = useState("");
   const [name, setName] = useState("");
@@ -17,7 +17,7 @@ function Menu() {
   const futchMenu = async () => {
     try {
       const menu = await axios.get(`http://localhost:3050/menu`);
-      console.log(menu.data.menu);
+      // console.log(menu.data.menu);
       setMenu(menu.data.menu);
     } catch (error) {
       console.error(error);
@@ -25,6 +25,7 @@ function Menu() {
   };
   useEffect(() => {
     futchMenu();
+    console.log(orderItem);
   }, []);
 
   return (

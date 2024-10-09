@@ -26,7 +26,7 @@ const ordersSchema = new mongoose.Schema({
     },
   ],
   total: {
-    type: String,
+    type: Number,
     required: true,
   },
 });
