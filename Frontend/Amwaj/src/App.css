@@ -31,7 +31,7 @@ body {
   display: flex;
   align-items: center;
 }
-.cart {
+.cartLogo {
   height: 100%;
   margin-right: 2vw;
   display: flex;
@@ -41,10 +41,10 @@ body {
   height: 100%;
   align-items: center;
 }
-.cart img {
+.cartLogo img {
   cursor: pointer;
 }
-.cart img:hover {
+.cartLogo img:hover {
   height: 10.5vh;
 }
 .form {
@@ -64,12 +64,12 @@ form input {
   background-color: var(--clr-light);
 }
 .submit {
-  width: 100%;
+  width: 95%;
   background-color: var(--clr-light);
   color: var(--clr-dark);
   font-size: 22px;
   margin-top: 1em;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 }
 button {
@@ -79,7 +79,7 @@ button {
   width: 95%;
   background-color: var(--clr-light);
   color: var(--clr-dark);
-  font-size: 22px;
+  font-size: 20px;
   margin-top: 1em;
   border-radius: 5px;
   cursor: pointer;
@@ -167,7 +167,6 @@ img {
 .dec {
   height: 30%;
 }
-
 .user {
   display: flex;
   border: solid;
@@ -188,8 +187,6 @@ img {
   text-align: center;
   justify-content: center;
   border-bottom-left-radius: 15px;
-
-
 }
 .userButton {
   width: 50%;
@@ -198,10 +195,87 @@ img {
   background-color: var(--clr-dark);
   color: var(--clr-light);
 
-  
   align-items: center;
   justify-content: center;
   text-align: center;
   border-top-right-radius: 15px;
+}
+/* ----------------------------cart---------------------- */
+.cart {
+  display: flex;
+  margin-left: 5em;
+  margin-right: 5em;
+  height: 640px;
+}
+.order {
+  border: solid;
+  width: 50%;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+.order h1 {
+  margin-left: 1em;
+font-weight: bold;
+}
+.checkOut {
+  border: solid;
+  width: 50%;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  align-items: center;
+  text-align: start;
+}
+.checkOut div{
+  display: flex;
+  padding-left: 30%;
 
 }
+.checkOutText{
+ padding-left: 30%;
+}
+.itemList{
+  margin: 1em;
+  border-radius: 10px;
+  border: solid;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+}
+.itemList img{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 100%;
+  width: 10%;
+}
+.cont{
+  align-items: center;
+  margin-right: 1em;
+}
+.itemList button{
+  width: 1em;
+  /* height: 1em; */
+  border-radius: 50%;
+  margin-top: 0%;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  font-size: 15px;
+}
+button:hover{
+  zoom: 97%;
+}
+.checkout-form {
+  background-color: var(--clr-light);
+  color: var(--clr-dark); 
+  padding:30px;
+  align-items: center;
+  justify-content: center;
+}
+.checkout-form input{
+  background-color: var(--clr-dark);
+  color: var(--clr-light); 
+  /* border-radius: 5px; */
+}
+

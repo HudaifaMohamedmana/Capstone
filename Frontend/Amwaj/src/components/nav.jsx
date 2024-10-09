@@ -1,6 +1,6 @@
 import React from "react";
 import LogIn from "./logIn";
-import Cart from "./Cart";
+import CheckOut from "./CheckOut";
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -15,9 +15,9 @@ function Nav() {
           <h2>Amwaj Cafe</h2>
         </div>
       </Link>
-      <div className="cart">
+      <div className="cartLogo">
         <LogIn />
-        <Cart />
+        <CheckOut />
       </div>
     </div>
   );

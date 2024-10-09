@@ -40,8 +40,8 @@ function Profile() {
           address: address,
         }
       );
-      logOut()
-    //   setUser(editUserProfile.data.user);
+      logOut();
+      //   setUser(editUserProfile.data.user);
       console.log(editUserProfile);
       toggleEdit();
     } catch (error) {
@@ -64,7 +64,7 @@ function Profile() {
     if (!user.email) {
       navigate("/");
       console.log("you need to sign in first");
-    //   alert("you need to sign in first");
+      //   alert("you need to sign in first");
     }
   }, [user, navigate]);
 
@@ -123,15 +123,15 @@ function Profile() {
       )}
       {isEdit && (
         <div className="user">
-        <div className="userInfo">
-          <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p>
-          <p>Address: {user.address}</p>
+          <div className="userInfo">
+            <p>Name: {user.name}</p>
+            <p>Email: {user.email}</p>
+            <p>Address: {user.address}</p>
           </div>
           <div className="userButton">
-          <button onClick={toggleEdit}>Edit</button>
-          <button onClick={logOut}>log out</button>
-          <button onClick={deleteUser}>Delete my account</button>
+            <button onClick={toggleEdit}>Edit</button>
+            <button onClick={logOut}>log out</button>
+            <button onClick={deleteUser}>Delete my account</button>
           </div>
         </div>
       )}

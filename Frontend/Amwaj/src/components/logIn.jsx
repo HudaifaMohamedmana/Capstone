@@ -8,7 +8,7 @@ function LogIn() {
   const redirectPath = user.email !== "" ? "/Profile" : "/Form";
 
   return (
-    <div className="cart">
+    <div className="cartLogo">
       <Link to={redirectPath}>
           <img
             src="https://images.freeimages.com/fic/images/icons/740/made_of_wood/512/user_matte.png"

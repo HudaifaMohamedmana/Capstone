@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 
 const ItemFram = ({ item }) => {
-  const { orders, setOrders, orderItem, setOrderItem } = useContext(AppContext);
+  const { orderItem, setOrderItem } = useContext(AppContext);
   const add = () => {
     const newItem = {
       _id: item._id,
