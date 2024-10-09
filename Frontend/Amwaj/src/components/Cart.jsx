@@ -5,7 +5,7 @@ import { AppContext } from "../App";
 import CartFrame from "./CartFrame";
 
 function Cart() {
-  const { orders, setOrders, user } = useContext(AppContext);
+  const { orders,total, setOrders, user,setOrderItem } = useContext(AppContext);
   const [isSignIn, setIsSighnIn] = useState();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -33,24 +33,28 @@ function Cart() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    // console.log("Form Submitted:", formData);
     setFormData({
       name: user.name,
       email: user.email,
       address: "",
-      city: "",
-      state: "",
-      zip: "",
       cardNumber: "",
       expirationDate: "",
       cvv: "",
     });
-    
+    setOrderItem([])
+    const response = await axios.post('http://localhost:3050/orders', {
+      email: formData.email,
+      item: orders.item,
+      total: total,
+    });
+    console.log(response.data.newOrder)
+
   };
   const itemList = orders.item;
-  console.log(itemList);
+  // console.log(itemList);
   const signIn = () => {
     navigate("/form");
   };
@@ -59,12 +63,13 @@ function Cart() {
     <div className="cart">
       <div className="order">
         <h1>Total: ${orders.total.toFixed(2)}</h1>
-
-        {itemList.length > 0 ? (
-          itemList.map((item) => <CartFrame key={item._id} item={item} />)
-        ) : (
-          <p>Your cart is empty.</p>
-        )}
+        <div className="itemBox">
+          {itemList.length > 0 ? (
+            itemList.map((item) => <CartFrame key={item._id} item={item} />)
+          ) : (
+            <p>Your cart is empty.</p>
+          )}
+        </div>
       </div>
 
       <div className="checkOut">

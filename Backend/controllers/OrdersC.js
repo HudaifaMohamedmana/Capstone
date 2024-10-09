@@ -2,13 +2,13 @@ const Orders = require("../models/ordersM");
 
 // ----------------------------------------------- make new order
 const createOrder = async (req, res) => {
-  try {
-    const { email, item, total } = req.body;
+  const { email, item, total } = req.body;
 
+  try {
     if (!item || item.length === 0) {
       return res.status(400).json({ message: "Items are required" });
     }
-    const newOrder = new Orders({
+    const newOrder = await Orders.create({
       email: email,
       item: item,
       total: total,
