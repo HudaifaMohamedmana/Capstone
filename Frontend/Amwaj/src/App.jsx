@@ -52,7 +52,6 @@ function App() {
       setIsAdmin(true);
     }else{
       setIsAdmin(false);
-
     }
     console.log(isAdmin)
   }, [isAdmin,user]);

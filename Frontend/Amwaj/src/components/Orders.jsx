@@ -13,7 +13,7 @@ function Orders() {
   const fetchOrders = async () => {
     try {
       const orders = await axios.get(`http://localhost:3050/orders`);
-      console.log(orders.data);
+      // console.log(orders.data);
       setOrders(orders.data);
     } catch (error) {
       console.error(error);

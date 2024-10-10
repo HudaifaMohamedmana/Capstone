@@ -32,7 +32,7 @@ const ItemFram = ({ item, fetchMenu }) => {
         )
       );
     }
-    console.log(orderItem);
+    // console.log(orderItem);
   };
 
   const deleteItem = async () => {
@@ -58,7 +58,7 @@ const ItemFram = ({ item, fetchMenu }) => {
           inStock: true,
         }
       );
-      console.log(editItemProfile);
+      // console.log(editItemProfile);
       toggleEdit();
       await fetchMenu();
     } catch (error) {
@@ -117,7 +117,6 @@ const ItemFram = ({ item, fetchMenu }) => {
               <div className="dec">
                 <h3>{item.name}</h3>
                 <p>Price: ${item.price}</p>
-                <button onClick={add}>add</button>
                 <button onClick={toggleEdit}>Edit</button>
                 <button onClick={deleteItem}>Delete Item</button>
               </div>

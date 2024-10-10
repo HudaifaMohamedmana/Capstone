@@ -352,12 +352,20 @@ flex-wrap: wrap;
   background-color: var(--clr-dark);
   color: var(--clr-light);
   text-align: center;
-  height: 60vh;
+  height: 320px;
   padding: 1em;
   justify-content: space-between;
+  max-width: 20vw;
+  border-radius: 5px;
 }
 select{
+  margin: 2px;
+  border-radius: 5px;
   color: var(--clr-dark);
   background-color: var(--clr-light);
 }
-
+.center{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}

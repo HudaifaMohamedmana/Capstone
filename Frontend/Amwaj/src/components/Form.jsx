@@ -34,7 +34,7 @@ export const Form = () => {
         });
         alert('Sign Up successful!');
         // setUser(response.data.user);
-        console.log(response.data.user)
+        // console.log(response.data.user)
         navigate('/form');
         toggleForm()
       } else {
@@ -43,7 +43,7 @@ export const Form = () => {
             password: password 
         });
         setUser(response.data.user);
-        console.log(response.data.user)
+        // console.log(response.data.user)
         navigate('/');
       }
     } catch (error) {

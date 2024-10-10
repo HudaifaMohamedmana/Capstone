@@ -52,7 +52,7 @@ function Cart() {
       item: orders.item,
       total: total,
     });
-    console.log(response.data.newOrder)
+    // console.log(response.data.newOrder)
 
   };
   const itemList = orders.item;

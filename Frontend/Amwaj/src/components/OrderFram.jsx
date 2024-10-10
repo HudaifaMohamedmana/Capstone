@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 
 function OrderFram({ order, refreshOrders  }) {
-  console.log(order);
+  // console.log(order);
   const deleteOrder = async () => {
     try {
       await axios.delete(`http://localhost:3050/orders/${order._id}`);

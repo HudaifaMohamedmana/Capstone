@@ -42,7 +42,7 @@ function Profile() {
       );
       logOut();
       //   setUser(editUserProfile.data.user);
-      console.log(editUserProfile);
+      // console.log(editUserProfile);
       toggleEdit();
     } catch (error) {
       console.error("Error updating user:", error);

@@ -5,11 +5,12 @@ import ItemFram from "./ItemFram";
 import { AppContext } from "../App";
 
 function Menu() {
-  const { user, menu, setMenu,orderItem } = useContext(AppContext);
+  const { user, menu, setMenu, orderItem, isAdmin } = useContext(AppContext);
 
   const [type, setType] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
+  const [imge, setImge] = useState();
   const [description, setDescription] = useState("");
   const [inStock, setInStock] = useState(true);
   //-------------------------------------------------
@@ -23,13 +24,99 @@ function Menu() {
       console.error(error);
     }
   };
+
+  const addItem = async (e) => {
+    e.preventDefault();
+    const response = await axios.post("http://localhost:3050/menu", {
+      type: type,
+      name: name,
+      price: price,
+      imge: imge,
+      description: description,
+      inStock: inStock,
+    });
+    setType("");
+    setName("");
+    setPrice(0);
+    setImge("");
+    setDescription("");
+    setInStock(true);
+  };
+  const toggleInStock = () => {
+    setInStock(!inStock);
+  };
+
   useEffect(() => {
     fetchMenu();
-    console.log(orderItem);
-  }, []);
+    // console.log(orderItem);
+  }, [addItem]);
 
   return (
     <div>
+      {isAdmin && (
+        <>
+          <h1>Add</h1>
+          <div className="center">
+            <div className="menuEdit">
+              <form onSubmit={addItem}>
+                <label>Name: </label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <br />
+
+                <label>Imge Url: </label>
+                <input
+                  type="url"
+                  value={imge}
+                  required
+                  onChange={(e) => setImge(e.target.value)}
+                />
+                <br />
+                <label>price: </label>
+                <input
+                  type="text"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  required
+                />
+                <br />
+                <label>Description: </label>
+                <input
+                  type="textbox"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                <br />
+                <label>Type: </label>
+                <select
+                  value={type}
+                  onChange={(e) => setType(e.target.value)}
+                  required
+                >
+                  <option value="">Select Type</option>
+                  <option value="hotDrink">Hot Drink</option>
+                  <option value="coldDrink">Cold Drink</option>
+                  <option value="sweet">Sweet</option>
+                </select>
+                <br />
+                <label>inStock: </label>
+                <input
+                  type="checkbox"
+                  value={inStock}
+                  onChange={(e) => setInStock(e.target.checked)}
+                  defaultChecked={true} 
+                  required
+                />
+                <input className="submit" type="submit" value="Add" />
+              </form>
+            </div>
+          </div>
+        </>
+      )}
       <h1>Hot Drinks</h1>
 
       <div className="hotDrink">
