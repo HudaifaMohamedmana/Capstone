@@ -33,9 +33,10 @@ export const Form = () => {
           address,
         });
         alert('Sign Up successful!');
-        setUser(response.data.user);
+        // setUser(response.data.user);
         console.log(response.data.user)
-        navigate('/');
+        navigate('/form');
+        toggleForm()
       } else {
         const response = await axios.post(`http://localhost:3050/user/login`, {
             email: email, 

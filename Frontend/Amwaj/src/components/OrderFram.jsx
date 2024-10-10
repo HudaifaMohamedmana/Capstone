@@ -11,10 +11,7 @@ function OrderFram({ order, refreshOrders  }) {
       console.error(error);
     }
   };
-useEffect(()=>{
-    //to refrush
 
-})
   return (
     <div className="orderFram">
       <div className="orderDiv">Name: {order.name}</div>

@@ -36,7 +36,7 @@ function Menu() {
         {menu.length > 0 ? (
           menu.map((item) =>
             item.type === "hotDrink" ? (
-              <ItemFram key={item._id} item={item} />
+              <ItemFram key={item._id} item={item} fetchMenu={fetchMenu} />
             ) : null
           )
         ) : (
@@ -49,7 +49,7 @@ function Menu() {
         {menu.length > 0 ? (
           menu.map((item) =>
             item.type === "coldDrink" ? (
-              <ItemFram key={item._id} item={item} />
+              <ItemFram key={item._id} item={item} fetchMenu={fetchMenu} />
             ) : null
           )
         ) : (
@@ -62,7 +62,7 @@ function Menu() {
         {menu.length > 0 ? (
           menu.map((item) =>
             item.type === "sweet" ? (
-              <ItemFram key={item._id} item={item} />
+              <ItemFram key={item._id} item={item} fetchMenu={fetchMenu} />
             ) : null
           )
         ) : (
