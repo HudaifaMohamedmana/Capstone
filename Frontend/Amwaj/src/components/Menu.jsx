@@ -108,7 +108,7 @@ function Menu() {
                   type="checkbox"
                   value={inStock}
                   onChange={(e) => setInStock(e.target.checked)}
-                  defaultChecked={true} 
+                  defaultChecked={true}
                   required
                 />
                 <input className="submit" type="submit" value="Add" />

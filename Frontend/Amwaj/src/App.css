@@ -132,16 +132,14 @@ a {
 .sweet {
   display: flex;
   overflow-x: auto;
-  flex-direction:row; 
-  justify-content:flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
   /* width: 95vw; */
 }
-/* ::-webkit-scrollbar {
-  height: 0;
-} */
+
 .item {
   border: solid;
-  width: 220px;
+  width: 18vw;
   /* height: 340px; */
   margin: 1vh;
   border-top-left-radius: 10px;
@@ -150,8 +148,7 @@ a {
   background-color: var(--clr-light);
   color: var(--clr-dark);
   text-align: center;
-  flex-shrink: 0;      
-
+  flex-shrink: 0;
 }
 .item img {
   width: 100%;
@@ -207,7 +204,7 @@ img {
   text-align: center;
   border-top-right-radius: 15px;
 }
-h1{
+h1 {
   background-color: var(--clr-light);
   color: var(--clr-dark);
   text-align: center;
@@ -251,7 +248,7 @@ h1{
   align-items: center;
   text-align: start;
 }
-.checkOut button{
+.checkOut button {
   margin-left: 1vw;
 }
 .checkOut div {
@@ -307,11 +304,11 @@ button:hover {
   /* border-radius: 5px; */
 }
 /* -----------------------------------------admin ---------------------------------------------------*/
-.orders{
-display: flex;
-flex-wrap: wrap;
+.orders {
+  display: flex;
+  flex-wrap: wrap;
 }
-.orderFram{
+.orderFram {
   border: solid;
   width: 20vw;
   margin: 1em;
@@ -321,16 +318,16 @@ flex-wrap: wrap;
   justify-content: center;
   border-radius: 10px;
 }
-.orderFram button{
+.orderFram button {
   margin: 6px;
   align-items: center;
   justify-content: center;
 }
-.orderDiv{
+.orderDiv {
   padding-left: 1vw;
   margin: 5px;
 }
-.orderOver{
+.orderOver {
   border: solid;
   overflow: auto;
   height: 45vh;
@@ -339,8 +336,7 @@ flex-wrap: wrap;
   color: var(--clr-dark);
   margin-left: 0;
 }
-.orderOver div{
-  
+.orderOver div {
   display: flex;
   justify-content: space-between;
 }
@@ -358,14 +354,19 @@ flex-wrap: wrap;
   max-width: 20vw;
   border-radius: 5px;
 }
-select{
+select {
   margin: 2px;
   border-radius: 5px;
   color: var(--clr-dark);
   background-color: var(--clr-light);
 }
-.center{
+.center {
   display: flex;
   justify-content: center;
   height: 100%;
+}
+::-webkit-scrollbar {
+  /* height: 7px; */
+  background-color:rgba(255, 255, 255, 0.5);
+
 }
